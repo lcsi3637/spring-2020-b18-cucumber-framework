@@ -3,8 +3,8 @@ Feature: Search
 
   Scenario: Google default title verification
     Given User is on the google search page
-    When User should see title is Google
+    Then User should see title is Google
 
+#BREAK UNTIL 4.06PM EST
 
-    
 
