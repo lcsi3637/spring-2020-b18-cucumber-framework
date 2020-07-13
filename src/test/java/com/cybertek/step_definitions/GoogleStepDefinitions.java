@@ -66,13 +66,17 @@ public class GoogleStepDefinitions {
         GoogleSearchPage googleSearchPage = new GoogleSearchPage();
 
         //sending value into search box using page object
-        googleSearchPage.searchBox.sendKeys("apple" + Keys.ENTER);
+        googleSearchPage.searchBox.sendKeys(searchValue + Keys.ENTER);
 
     }
 
     @Then("User should see {string} in the title")
     public void userShouldSeeInTheTitle(String searchValue) {
 
+        String expectedTitle = searchValue + " - Google Search";
+        String actualTitle = Driver.getDriver().getTitle();
+
+        Assert.assertEquals(actualTitle, expectedTitle);
 
 
     }
