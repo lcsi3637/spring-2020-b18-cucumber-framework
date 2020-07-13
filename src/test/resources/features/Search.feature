@@ -17,3 +17,9 @@ Feature: Search
     When User searches "broccoli"
     Then User should see "broccoli" in the title
 
+  Scenario: Google -About- link page title verification
+    Then User should see About link
+    And User clicks to About link
+    Then User should see title Google - About Google, Our Culture & Company News
+
+
