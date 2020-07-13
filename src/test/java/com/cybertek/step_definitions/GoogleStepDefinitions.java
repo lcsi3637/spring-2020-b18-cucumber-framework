@@ -11,6 +11,8 @@ import org.openqa.selenium.Keys;
 
 public class GoogleStepDefinitions {
 
+    //creating the page object
+    GoogleSearchPage googleSearchPage = new GoogleSearchPage();
 
     @Given("User is on the google search page")
     public void user_is_on_the_google_search_page() {
@@ -41,9 +43,6 @@ public class GoogleStepDefinitions {
     @When("User searches apple")
     public void userSearchesApple() {
 
-        //creating the page object
-        GoogleSearchPage googleSearchPage = new GoogleSearchPage();
-
         //sending value into search box using page object
         googleSearchPage.searchBox.sendKeys("apple" + Keys.ENTER);
 
@@ -63,8 +62,7 @@ public class GoogleStepDefinitions {
     @When("User searches {string}")
     public void userSearches(String searchValue) {
 
-        //creating the page object
-        GoogleSearchPage googleSearchPage = new GoogleSearchPage();
+
 
         //sending value into search box using page object
         googleSearchPage.searchBox.sendKeys(searchValue + Keys.ENTER);
@@ -84,6 +82,8 @@ public class GoogleStepDefinitions {
 
     @Then("User should see About link")
     public void userShouldSeeAboutLink() {
+        //asserting that about link is displayed
+        Assert.assertTrue(googleSearchPage.aboutLink.isDisplayed());
     }
 
     @And("User clicks to About link")
