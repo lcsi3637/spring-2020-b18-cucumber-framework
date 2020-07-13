@@ -2,6 +2,7 @@ package com.cybertek.step_definitions;
 
 import com.cybertek.pages.GoogleSearchPage;
 import com.cybertek.utilities.Driver;
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -71,15 +72,25 @@ public class GoogleStepDefinitions {
     }
 
     @Then("User should see {string} in the title")
-    public void userShouldSeeInTheTitle(String searchValue) {
+    public void userShouldSeeInTheTitle(String expectedInTitle) {
 
-        String expectedTitle = searchValue + " - Google Search";
+        String expectedTitle = expectedInTitle + " - Google Search";
         String actualTitle = Driver.getDriver().getTitle();
 
         Assert.assertEquals(actualTitle, expectedTitle);
 
-
     }
 
 
+    @Then("User should see About link")
+    public void userShouldSeeAboutLink() {
+    }
+
+    @And("User clicks to About link")
+    public void userClicksToAboutLink() {
+    }
+
+    @Then("User should see title Google - About Google, Our Culture & Company News")
+    public void userShouldSeeTitleGoogleAboutGoogleOurCultureCompanyNews() {
+    }
 }
