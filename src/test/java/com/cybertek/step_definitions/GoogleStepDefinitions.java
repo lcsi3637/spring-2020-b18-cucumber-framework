@@ -15,7 +15,6 @@ public class GoogleStepDefinitions {
         //opening browser -> getting google.com
         Driver.getDriver().get("https://www.google.com");
 
-
     }
 
 
