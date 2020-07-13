@@ -17,12 +17,12 @@ public class Hooks {
         System.out.println("--------> BEFORE ANNOTATION: DB CONNECTION CREATED <------");
     }
 
-    @After(order = 5)
+    @After(order = 1)
     public void tearDownScenario(){
         System.out.println("-----> After annotation: Closing browser");
     }
 
-    @After(value = "@db", order = 4 )
+    @After(value = "@db", order = 2 )
     public void tearDownDatabaseConnection(){
         System.out.println("--------> AFTER ANNOTATION: DB CONNECTION CLOSED <------");
     }
