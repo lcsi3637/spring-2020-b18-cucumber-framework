@@ -88,9 +88,18 @@ public class GoogleStepDefinitions {
 
     @And("User clicks to About link")
     public void userClicksToAboutLink() {
+        //clicking to about link
+        googleSearchPage.aboutLink.click();
+
     }
 
     @Then("User should see title Google - About Google, Our Culture & Company News")
     public void userShouldSeeTitleGoogleAboutGoogleOurCultureCompanyNews() {
+
+        String expectedTitle = "Google - About Google, Our Culture & Company News";
+        String actualTitle = Driver.getDriver().getTitle();
+
+        Assert.assertEquals(actualTitle, expectedTitle);
+
     }
 }
