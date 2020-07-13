@@ -13,3 +13,7 @@ Feature: Search
     Then User should see apple in the title
 
 
+  Scenario: Google title verification after search
+    When User searches "apple"
+    Then User should see "apple" in the title
+
