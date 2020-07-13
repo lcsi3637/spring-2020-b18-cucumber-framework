@@ -4,20 +4,19 @@ Feature: Login feature
   to different accounts, and dashboard should be displayed.
   #this is how you comment in feature file
 
+  Background: User is on the login page
+    Given User is on the login page
 
   Scenario: Librarian login scenario
-    Given User is on the login page
     When User logs in as librarian
     Then User should see dashboard
 
 
   Scenario: Student login scenario
-    Given User is on the login page
     When User logs in as student
     Then User should see dashboard
 
 
   Scenario: Admin login scenario
-    Given User is on the login page
     When User logs in as admin
     Then User should see dashboard
