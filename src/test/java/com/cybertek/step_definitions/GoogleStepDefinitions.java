@@ -59,4 +59,23 @@ public class GoogleStepDefinitions {
     }
 
 
+    @When("User searches {string}")
+    public void userSearches(String searchValue) {
+
+        //creating the page object
+        GoogleSearchPage googleSearchPage = new GoogleSearchPage();
+
+        //sending value into search box using page object
+        googleSearchPage.searchBox.sendKeys("apple" + Keys.ENTER);
+
+    }
+
+    @Then("User should see {string} in the title")
+    public void userShouldSeeInTheTitle(String searchValue) {
+
+
+
+    }
+
+
 }
