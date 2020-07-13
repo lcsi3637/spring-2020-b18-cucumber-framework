@@ -17,6 +17,7 @@ Feature: Login feature
     When User logs in as student
     Then User should see dashboard
 
+    @db
   Scenario: Admin login scenario
     When User logs in as admin
     Then User should see dashboard
