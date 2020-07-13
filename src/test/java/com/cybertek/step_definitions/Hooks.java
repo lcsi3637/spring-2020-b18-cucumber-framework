@@ -5,12 +5,12 @@ import io.cucumber.java.Before;
 
 public class Hooks {
 
-    @Before
+    @Before(order = 2)
     public void setUpScenario(){
         System.out.println("-----> Before annotation: Setting up browser");
     }
 
-    @Before("@db")
+    @Before(value = "@db", order = 1)
     public void setUpDatabaseConnection(){
         System.out.println("--------> BEFORE ANNOTATION: DB CONNECTION CREATED <------");
     }
@@ -20,7 +20,7 @@ public class Hooks {
         System.out.println("-----> After annotation: Closing browser");
     }
 
-    @After
+    @After("@db")
     public void tearDownDatabaseConnection(){
         System.out.println("--------> AFTER ANNOTATION: DB CONNECTION CLOSED <------");
     }
