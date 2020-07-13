@@ -1,10 +1,12 @@
 package com.cybertek.step_definitions;
 
+import com.cybertek.pages.GoogleSearchPage;
 import com.cybertek.utilities.Driver;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
+import org.openqa.selenium.Keys;
 
 public class GoogleStepDefinitions {
 
@@ -38,12 +40,22 @@ public class GoogleStepDefinitions {
     @When("User searches apple")
     public void userSearchesApple() {
 
-        //BREAK UNTIL 4.01PM EST
+        //creating the page object
+        GoogleSearchPage googleSearchPage = new GoogleSearchPage();
+
+        //sending value into search box using page object
+        googleSearchPage.searchBox.sendKeys("apple" + Keys.ENTER);
 
     }
 
     @Then("User should see apple in the title")
     public void userShouldSeeAppleInTheTitle() {
+
+        String expectedTitle = "apple - Google Search";
+        String actualTitle = Driver.getDriver().getTitle();
+
+        Assert.assertEquals(actualTitle, expectedTitle);
+
     }
 
 
