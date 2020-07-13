@@ -12,11 +12,12 @@ Feature: Search
     When User searches apple
     Then User should see apple in the title
 
-  @wip
+
   Scenario: Google title verification after search
     When User searches "broccoli"
     Then User should see "broccoli" in the title
 
+  @wip
   Scenario: Google -About- link page title verification
     Then User should see About link
     And User clicks to About link
